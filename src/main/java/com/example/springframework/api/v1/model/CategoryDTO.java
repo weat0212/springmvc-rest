@@ -9,6 +9,7 @@ import javax.persistence.Entity;
  * @date 2021/3/24 下午 02:04
  */
 
+@Data
 public class CategoryDTO {
 
     private Long id;
