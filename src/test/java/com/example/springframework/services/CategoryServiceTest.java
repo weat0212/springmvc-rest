@@ -1,4 +1,4 @@
-package com.example.springframework.service;
+package com.example.springframework.services;
 
 import com.example.springframework.api.v1.mapper.CategoryMapper;
 import com.example.springframework.api.v1.model.CategoryDTO;

@@ -1,9 +1,8 @@
-package com.example.springframework.service;
+package com.example.springframework.services;
 
 import com.example.springframework.api.v1.mapper.CategoryMapper;
 import com.example.springframework.api.v1.model.CategoryDTO;
 import com.example.springframework.repositories.CategoryRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
