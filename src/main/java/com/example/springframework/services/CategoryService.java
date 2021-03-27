@@ -9,7 +9,7 @@ import java.util.List;
  * @author I-Chung, Wang
  * @date 2021/3/25 下午 02:01
  */
-@Service
+
 public interface CategoryService {
 
     List<CategoryDTO> getAllCategories();
