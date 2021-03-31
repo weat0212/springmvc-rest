@@ -7,7 +7,6 @@ import com.example.springframework.repositories.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -102,6 +101,30 @@ class CustomerServiceImplTest {
 
         //then
         assertEquals(customerDTO.getFirstName(), saveDTO.getFirstName());
-        assertEquals("/api/v1/customer/1", saveDTO.getCustomerUrl());
+        assertEquals("/api/v1/customers/1", saveDTO.getCustomerUrl());
+    }
+
+    @Test
+    void saveCustomerByDTO() {
+
+        final long ID = 1L;
+
+        //given
+        CustomerDTO customerDTO = new CustomerDTO();
+        customerDTO.setFirstName("Andy");
+
+        Customer savedCustomer = new Customer();
+        savedCustomer.setFirstName(customerDTO.getFirstName());
+        savedCustomer.setLastName(customerDTO.getLastName());
+        savedCustomer.setId(ID);
+
+        when(customerRepository.save(any(Customer.class))).thenReturn(savedCustomer);
+
+        //when
+        CustomerDTO savedDTO = customerService.saveCustomerByDTO(ID, customerDTO);
+
+        //then
+        assertEquals(customerDTO.getFirstName(), savedDTO.getFirstName());
+        assertEquals("/api/v1/customers/1", savedDTO.getCustomerUrl());
     }
 }
