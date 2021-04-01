@@ -36,9 +36,9 @@ class CustomerServiceImplTest {
 
     @BeforeEach
     public void setUp() {
-        customerService = new CustomerServiceImpl();
-        customerService.setCustomerMapper(customerMapper);
-        customerService.setCustomerRepository(customerRepository);
+        customerService = new CustomerServiceImpl(customerMapper, customerRepository);
+//        customerService.setCustomerMapper(customerMapper);
+//        customerService.setCustomerRepository(customerRepository);
     }
 
     @Test
