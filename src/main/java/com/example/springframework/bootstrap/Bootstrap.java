@@ -1,6 +1,6 @@
 package com.example.springframework.bootstrap;
 
-import com.example.springframework.api.v1.model.Customer;
+import com.example.springframework.domain.Customer;
 import com.example.springframework.domain.Category;
 import com.example.springframework.repositories.CategoryRepository;
 import com.example.springframework.repositories.CustomerRepository;

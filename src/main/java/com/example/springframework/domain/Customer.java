@@ -1,4 +1,4 @@
-package com.example.springframework.api.v1.model;
+package com.example.springframework.domain;
 
 import lombok.Data;
 

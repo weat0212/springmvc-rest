@@ -1,7 +1,7 @@
 package com.example.springframework.services;
 
 import com.example.springframework.api.v1.mapper.CustomerMapper;
-import com.example.springframework.api.v1.model.Customer;
+import com.example.springframework.domain.Customer;
 import com.example.springframework.api.v1.model.CustomerDTO;
 import com.example.springframework.bootstrap.Bootstrap;
 import com.example.springframework.repositories.CategoryRepository;

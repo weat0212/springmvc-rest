@@ -1,6 +1,6 @@
 package com.example.springframework.api.v1.mapper;
 
-import com.example.springframework.api.v1.model.Customer;
+import com.example.springframework.domain.Customer;
 import com.example.springframework.api.v1.model.CustomerDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

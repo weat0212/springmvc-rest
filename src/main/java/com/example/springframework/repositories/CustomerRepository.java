@@ -1,6 +1,6 @@
 package com.example.springframework.repositories;
 
-import com.example.springframework.api.v1.model.Customer;
+import com.example.springframework.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
