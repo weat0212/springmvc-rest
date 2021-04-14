@@ -2,10 +2,7 @@ package com.example.springframework.controllers.v1;
 
 import com.example.springframework.api.v1.model.VendorDTO;
 import com.example.springframework.api.v1.model.VendorListDTO;
-import com.example.springframework.controllers.RestResponseEntityExceptionHandler;
-import com.example.springframework.services.ResourceNotFoundException;
 import com.example.springframework.services.VendorService;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,13 +12,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultMatcher;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
-import java.util.Optional;
 
 import static com.example.springframework.controllers.v1.AbstractRestControllerTest.asJsonString;
 import static org.hamcrest.Matchers.equalTo;
@@ -161,7 +153,6 @@ class VendorControllerTest {
     }
 
     @Test
-    @Ignore
     void testNotFoundException() throws Exception {
 
         /*when(vendorController.getVendorById(anyLong())).thenThrow(ResourceNotFoundException.class);
