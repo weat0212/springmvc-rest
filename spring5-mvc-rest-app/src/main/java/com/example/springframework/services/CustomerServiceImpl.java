@@ -2,7 +2,7 @@ package com.example.springframework.services;
 
 import com.example.springframework.api.v1.mapper.CustomerMapper;
 import com.example.springframework.domain.Customer;
-import com.example.springframework.api.v1.model.CustomerDTO;
+import com.example.springframework.model.CustomerDTO;
 import com.example.springframework.controllers.v1.CustomerController;
 import com.example.springframework.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;

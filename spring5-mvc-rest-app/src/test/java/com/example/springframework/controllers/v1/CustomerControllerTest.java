@@ -1,6 +1,6 @@
 package com.example.springframework.controllers.v1;
 
-import com.example.springframework.api.v1.model.CustomerDTO;
+import com.example.springframework.model.CustomerDTO;
 import com.example.springframework.controllers.RestResponseEntityExceptionHandler;
 import com.example.springframework.services.CustomerService;
 import com.example.springframework.services.ResourceNotFoundException;
@@ -104,7 +104,7 @@ class CustomerControllerTest {
         returnDTO.setLastName(customer.getLastName());
         returnDTO.setCustomerUrl(CustomerController.BASE_URL + "/1");
 
-        when(customerService.createNewCustomer(customer)).thenReturn(returnDTO);
+        when(customerService.createNewCustomer(any())).thenReturn(returnDTO);
 
         //when then
         mockMvc.perform(post(CustomerController.BASE_URL)
@@ -113,7 +113,7 @@ class CustomerControllerTest {
                 .content(asJsonString(customer)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.firstName", equalTo("Andy")))
-                .andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+                .andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
 
     }
 
@@ -140,7 +140,7 @@ class CustomerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.firstName", equalTo("Andy")))
                 .andExpect(jsonPath("$.lastName", equalTo("Wang")))
-                .andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+                .andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
     }
 
     @Test
@@ -164,7 +164,7 @@ class CustomerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.firstName", equalTo("Andy")))
                 .andExpect(jsonPath("$.lastName", equalTo("Wang")))
-                .andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+                .andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
     }
 
     @Test
